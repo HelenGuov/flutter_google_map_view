@@ -38,7 +38,7 @@
         navController.navigationBar.translucent = NO;
         [self.host presentViewController:navController animated:true completion:nil];
         self.mapViewController = vc;
-        [self.mapViewController setLocationEnabled:[call.arguments[@"showUserLocation"] boolValue]];
+        [self.mapViewController setLocationEnabled:YES]; //Had to force this for our purposes as it always come in with a value of NO.
         result(@YES);
     } else if ([@"setAnnotations" isEqualToString:call.method]) {
         [self handleSetAnnotations:call.arguments];
